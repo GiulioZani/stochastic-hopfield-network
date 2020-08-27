@@ -19,8 +19,8 @@ class HopfieldNetwork{
             throw 'nothing memorized!'
         }
         return temperatureRange ?
-            recallWithSimulatedAnnealing(this.weights, cue, temperatureRange) :
-            recall(this.weights, cue, temperature)
+            recallWithSimulatedAnnealing(this.weights, cue, temperatureRange[0], temperatureRange[1], temperatureRange[2]) :
+            recall(this.weights, cue)
     }
     reset(){
         this.weights = _.zeros(this.nodeCount, this.nodeCount)
